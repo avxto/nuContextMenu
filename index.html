@@ -7,6 +7,76 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-light.css">
+    <style>
+    
+    .demo-container {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    
+    .demo-item {
+      height: 50px;
+      margin: 5px;
+      background: #eee;
+      border: 1px solid transparent;
+    }
+    
+    .nu-context-menu {
+      background-clip: padding-box;
+      background-color: #fff;
+      border: 1px solid rgba(0,0,0,0.10);
+      border-radius: 2px;
+      box-shadow: 0 2px 2px rgba(0,0,0,0.15);
+      box-sizing: border-box;
+      display: block;
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      width: 0;
+      z-index: 9999;
+    }
+    
+    .nu-context-menu.active {
+      opacity: 1;
+      height: auto;
+      width: auto;
+    }
+    
+    
+    .nu-context-menu ul {
+      font-size: 15px;
+      list-style: none;
+      margin: 2px 0 0;
+      padding: 4px 0;
+      text-align: left;
+    }
+    
+    .nu-context-menu ul li {
+      clear: both;
+      color: #777;
+      cursor: pointer;
+      font-weight: 400;
+      line-height: 1.42857;
+      padding: 2px 20px;
+      white-space: nowrap;
+    }
+    
+    .nu-context-menu ul li:hover {
+      background: #f2f2f2;
+      color: #333;
+    }
+    
+    .nu-context-menu ul hr {
+      background: #e8e8e8;
+      border: 0;
+      color: #e8e8e8;
+      height: 1px;
+      margin: 4px 0;
+    }
+    
+    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -80,9 +150,17 @@ This means that a single menu can be attached to multiple elements.</p>
 </code></pre>
 
 <h1>
-<a id="screenshots" class="anchor" href="#screenshots" aria-hidden="true"><span class="octicon octicon-link"></span></a>Screenshots</h1>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h1>
 
-<p><img src="https://cloud.githubusercontent.com/assets/13611918/10264217/117b0946-69d3-11e5-8914-e00c391065e1.png" alt="Screenshot"></p>
+<div class="demo-container">
+  <div id="node">
+    <div class="demo-item"></div>
+    <div class="demo-item"></div>
+    <div class="demo-item"></div>
+    <div class="demo-item"></div>
+  </div>
+</div>
+
       </section>
       <footer>
         <p>This project is maintained by <a href="https://github.com/avxto">avxto</a></p>
