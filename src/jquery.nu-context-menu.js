@@ -139,7 +139,7 @@
             return true;
         },
 
-        _onClick: function(event) {
+        _onMouseDown: function(event) {
             // Remove menu if clicked outside
             if (!$(event.target).parents('.' + this.options.contextMenuClass).length) {
                 this._menu.removeClass(this.options.activeClass);
@@ -157,7 +157,7 @@
             }
 
             // Remove menu on click 
-            $(document).on('mousedown', $.proxy(this._onClick, this));
+            $(document).on('mousedown', $.proxy(this._onMouseDown, this));
 
         },
 
