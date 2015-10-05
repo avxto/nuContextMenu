@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Nucontextmenu by avxto</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Nucontextmenu</h1>
+        <p>Modern context menu with font awesome support for web apps (jQuery Plugin).</p>
+
+        <p class="view"><a href="https://github.com/avxto/nuContextMenu">View the Project on GitHub <small>avxto/nuContextMenu</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/avxto/nuContextMenu/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/avxto/nuContextMenu/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/avxto/nuContextMenu">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="nucontextmenu" class="anchor" href="#nucontextmenu" aria-hidden="true"><span class="octicon octicon-link"></span></a>nuContextMenu</h1>
+
+<p>A modern context menu with font awesome support for web apps. 
+The script is extremely light weight (2.2 kB), and it treats the menu as the primary object.
+This means that a single menu can be attached to multiple elements.</p>
+
+<h1>
+<a id="code-example" class="anchor" href="#code-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code Example</h1>
+
+<pre><code>$(function() {
+    var context = $('#node').nuContextMenu({
+
+        items: '.item',
+
+        callback: function(key, element) {
+            alert('Clicked ' + key + ' on ' + $(element).attr('id'));
+        },
+
+        // Define menu items here
+        // key: {...}
+        menu: {
+
+            'archive': {
+                title: 'Archive',
+                // Font awesome icons here
+                icon: 'archive',
+            },
+
+            'mark': {
+                title: 'Mark as read',
+                icon: 'check',
+            },
+
+            // If the value is 'separator' then an 
+            // &lt;hr&gt; node is added
+            'void': 'separator',
+
+            'delete': {
+                title: 'Delete',
+                icon: 'trash',
+            },
+        }
+    });
+
+    // Disable context menu
+    // context.nuContextMenu('disable');
+
+});
+</code></pre>
+
+<h1>
+<a id="screenshots" class="anchor" href="#screenshots" aria-hidden="true"><span class="octicon octicon-link"></span></a>Screenshots</h1>
+
+<p><img src="https://cloud.githubusercontent.com/assets/13611918/10264217/117b0946-69d3-11e5-8914-e00c391065e1.png" alt="Screenshot"></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/avxto">avxto</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
