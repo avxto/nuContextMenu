@@ -8,7 +8,8 @@ This means that a single menu can be attached to multiple elements.
 ```
 $(function() {
     var context = $('#node').nuContextMenu({
-
+    
+        // Omit items if you are attaching to a single container
         items: '.item',
 
         callback: function(key, element) {
