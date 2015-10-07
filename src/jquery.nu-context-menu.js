@@ -37,14 +37,7 @@
         },
 
         _getCallback: function() {
-
-            var callback = function() {};
-
-            if (this.options.callback && typeof this.options.callback === 'function') {
-                callback = this.options.callback;
-            }
-
-            return callback;
+            return ((this.options.callback && typeof this.options.callback === 'function') ? this.options.callback : function () {});
         },
 
         _buildContextMenu: function() {
