@@ -5,7 +5,7 @@ This means that a single menu can be attached to multiple elements.
 
 
 # Code Example
-```
+``` javascript
 $(function() {
     var context = $('#node').nuContextMenu({
     
