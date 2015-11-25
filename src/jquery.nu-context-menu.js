@@ -11,8 +11,9 @@
   var plugin = 'nuContextMenu';
 
   var defaults = {
+    hideAfterClick: false,
     contextMenuClass: 'nu-context-menu',
-    activeClass: 'active',
+    activeClass: 'active'
   };
 
   var nuContextMenu = function(container, options) {
@@ -101,13 +102,12 @@
 
       event.preventDefault();
 
+      // Store the value of this
+      // So it can be used in the listItem click event
+      var _this = this;
       var element = event.target;
 
-      if (this._menuVisible) {
-        return false;
-      }
-
-      if (this.options.disable) {
+      if (this._menuVisible || this.options.disable) {
         return false;
       }
 
@@ -121,10 +121,12 @@
           var key = $(this)
             .attr('data-key');
           callback(key, element);
+          if (_this.options.hideAfterClick) {
+            _this.closeMenu();
+          }
         });
 
-      this._menu.addClass(this.options.activeClass);
-      this._menuVisible = true;
+      this.openMenu();
       this._menu.css({
         'top': event.pageY + 'px',
         'left': event.pageX + 'px'
@@ -138,8 +140,7 @@
       if (!$(event.target)
         .parents('.' + this.options.contextMenuClass)
         .length) {
-        this._menu.removeClass(this.options.activeClass);
-        this._menuVisible = false;
+        this.closeMenu();
       }
     },
 
@@ -150,8 +151,7 @@
           this));
         this.container.on('contextmenu', $.proxy(this._pDefault,
           this));
-      }
-      else {
+      } else {
         this.container.on('contextmenu', $.proxy(this._contextMenu,
           this));
       }
@@ -167,6 +167,18 @@
       return true;
     },
 
+    openMenu: function() {
+      this._menu.addClass(this.options.activeClass);
+      this._menuVisible = true;
+      return true;
+    },
+
+    closeMenu: function() {
+      this._menu.removeClass(this.options.activeClass);
+      this._menuVisible = false;
+      return true;
+    }
+
   });
 
   $.fn[plugin] = function(options) {
@@ -177,8 +189,7 @@
         instance = item.data(plugin);
       if (!instance) {
         item.data(plugin, new nuContextMenu(this, options));
-      }
-      else {
+      } else {
 
         if (typeof options === 'string' && options[0] !== '_' &&
           options !== 'init') {
