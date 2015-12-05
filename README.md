@@ -3,6 +3,8 @@ A modern context menu with font awesome support for web apps.
 The script is extremely light weight (2.2 kB), and it treats the menu as the primary object.
 This means that a single menu can be attached to multiple elements.
 
+# Installation 
+``` npm i jquery-nucontextmenu ```
 
 # Code Example
 ``` javascript
