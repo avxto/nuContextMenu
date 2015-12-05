@@ -168,12 +168,11 @@
 
     destroy: function(){
       if (this.items) {
-        console.log(this.items)
-        this.items.off('contextmenu')
+        this.items.off('contextmenu');
       } else {
         this.container.off('contextmenu');
       }
-      this._menu.remove()
+      this._menu.remove();
       return true;
     },
 
