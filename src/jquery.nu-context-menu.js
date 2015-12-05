@@ -150,7 +150,8 @@
         this.items.on('contextmenu', $.proxy(this._contextMenu,
           this));
 
-      } else {
+      }
+      else {
         this.container.on('contextmenu', $.proxy(this._contextMenu,
           this));
       }
@@ -166,10 +167,11 @@
       return true;
     },
 
-    destroy: function(){
+    destroy: function() {
       if (this.items) {
         this.items.off('contextmenu');
-      } else {
+      }
+      else {
         this.container.off('contextmenu');
       }
       this._menu.remove();
@@ -198,7 +200,8 @@
         instance = item.data(plugin);
       if (!instance) {
         item.data(plugin, new nuContextMenu(this, options));
-      } else {
+      }
+      else {
 
         if (typeof options === 'string' && options[0] !== '_' &&
           options !== 'init') {
