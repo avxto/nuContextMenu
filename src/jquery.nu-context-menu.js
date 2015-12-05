@@ -57,7 +57,7 @@
       var menuObject = this.options.menu,
         menuList = this._menu.children('ul');
 
-      // Create menu items 
+      // Create menu items
       $.each(menuObject, function(key, value) {
 
         var item;
@@ -149,14 +149,13 @@
       if (this.items) {
         this.items.on('contextmenu', $.proxy(this._contextMenu,
           this));
-        this.container.on('contextmenu', $.proxy(this._pDefault,
-          this));
+
       } else {
         this.container.on('contextmenu', $.proxy(this._contextMenu,
           this));
       }
 
-      // Remove menu on click 
+      // Remove menu on click
       $(document)
         .on('mousedown', $.proxy(this._onMouseDown, this));
 
@@ -164,6 +163,17 @@
 
     disable: function() {
       this.options.disable = true;
+      return true;
+    },
+
+    destroy: function(){
+      if (this.items) {
+        console.log(this.items)
+        this.items.off('contextmenu')
+      } else {
+        this.container.off('contextmenu');
+      }
+      this._menu.remove()
       return true;
     },
 
