@@ -1,217 +1,123 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>nuContextMenu</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-    <style>
-    
-    .demo-container {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-    
-    .demo-item {
-      padding: 10px;
-      height: 50px;
-      margin: 10px;
-      background: #eee;
-      border: 1px solid transparent;
-      font-size: 16px;
-    }
-    
-    .nu-context-menu {
-      background-clip: padding-box;
-      background-color: #fff;
-      border: 1px solid rgba(0,0,0,0.10);
-      border-radius: 2px;
-      box-shadow: 0 2px 2px rgba(0,0,0,0.15);
-      box-sizing: border-box;
-      display: block;
-      height: 0;
-      opacity: 0;
-      overflow: hidden;
-      position: absolute;
-      width: 0;
-      z-index: 9999;
-    }
-    
-    .nu-context-menu.active {
-      opacity: 1;
-      height: auto;
-      width: auto;
-    }
-    
-    
-    .nu-context-menu ul {
-      font-size: 15px;
-      list-style: none;
-      margin: 2px 0 0;
-      padding: 4px 0;
-      text-align: left;
-    }
-    
-    .nu-context-menu ul li {
-      clear: both;
-      color: #777;
-      cursor: pointer;
-      font-weight: 400;
-      line-height: 1.42857;
-      padding: 2px 20px;
-      white-space: nowrap;
-    }
-    
-    .nu-context-menu ul li:hover {
-      background: #f2f2f2;
-      color: #333;
-    }
-    
-    .nu-context-menu ul hr {
-      background: #e8e8e8;
-      border: 0;
-      color: #e8e8e8;
-      height: 1px;
-      margin: 4px 0;
-    }
-    
-    </style>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta charset="UTF-8">
+    <title>nuContextMenu by avxto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>nuContextMenu</h1>
-        <p>Modern context menu with font awesome support for web apps (jQuery Plugin).</p>
+    <section class="page-header">
+      <h1 class="project-name">nuContextMenu</h1>
+      <h2 class="project-tagline">Modern context menu with font awesome support for web apps (jQuery Plugin).</h2>
+      <a href="https://github.com/avxto/nuContextMenu" class="btn">View on GitHub</a>
+      <a href="https://github.com/avxto/nuContextMenu/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/avxto/nuContextMenu/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <p class="view"><a href="https://github.com/avxto/nuContextMenu">View the Project on GitHub <small>avxto/nuContextMenu</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/avxto/nuContextMenu/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/avxto/nuContextMenu/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/avxto/nuContextMenu">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
+    <section class="main-content">
+      <h1>
 <a id="nucontextmenu" class="anchor" href="#nucontextmenu" aria-hidden="true"><span class="octicon octicon-link"></span></a>nuContextMenu</h1>
 
-<p>A modern context menu with font awesome support for web apps. 
+<p>A modern context menu with font awesome support for web apps.
 The script is extremely light weight (2.2 kB), and it treats the menu as the primary object.
 This means that a single menu can be attached to multiple elements.</p>
 
 <h1>
-<a id="code-example" class="anchor" href="#code-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code Example</h1>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span class="octicon octicon-link"></span></a>Installation</h1>
 
-<pre><code>$(function() {
-    var context = $('#node').nuContextMenu({
-
-        items: '.item',
-
-        callback: function(key, element) {
-            alert('Clicked ' + key + ' on ' + $(element).attr('id'));
-        },
-
-        // Define menu items here
-        // key: {...}
-        menu: {
-
-            'archive': {
-                title: 'Archive',
-                // Font awesome icons here
-                icon: 'archive',
-            },
-
-            'mark': {
-                title: 'Mark as read',
-                icon: 'check',
-            },
-
-            // If the value is 'separator' then an 
-            // &lt;hr&gt; node is added
-            'void': 'separator',
-
-            'delete': {
-                title: 'Delete',
-                icon: 'trash',
-            },
-        }
-    });
-
-    // Disable context menu
-    // context.nuContextMenu('disable');
-
-});
-</code></pre>
+<p><code>npm i jquery-nucontextmenu</code></p>
 
 <h1>
-<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h1>
+<a id="code-example" class="anchor" href="#code-example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Code Example</h1>
 
-<div class="demo-container">
-  <div id="node">
-    <div class="demo-item" id="item-1">Item 1</div>
-    <div class="demo-item" id="item-2">Item 2</div>
-    <div class="demo-item" id="item-3">Item 3</div>
-    <div class="demo-item" id="item-4">Item 4</div>
-  </div>
-</div>
+<div class="highlight highlight-source-js"><pre><span class="pl-en">$</span>(<span class="pl-k">function</span>() {
+  <span class="pl-k">var</span> context <span class="pl-k">=</span> <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#node<span class="pl-pds">'</span></span>)
+    .<span class="pl-en">nuContextMenu</span>({
+
+      hideAfterClick<span class="pl-k">:</span> <span class="pl-c1">true</span>,
+
+      items<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>.demo-item<span class="pl-pds">'</span></span>,
+
+      <span class="pl-en">callback</span><span class="pl-k">:</span> <span class="pl-k">function</span>(<span class="pl-smi">key</span>, <span class="pl-smi">element</span>) {
+        <span class="pl-c1">alert</span>(<span class="pl-s"><span class="pl-pds">'</span>Clicked <span class="pl-pds">'</span></span> <span class="pl-k">+</span> key <span class="pl-k">+</span> <span class="pl-s"><span class="pl-pds">'</span> on <span class="pl-pds">'</span></span> <span class="pl-k">+</span> <span class="pl-en">$</span>(element)
+          .<span class="pl-en">attr</span>(<span class="pl-s"><span class="pl-pds">'</span>id<span class="pl-pds">'</span></span>));
+      },
+
+      menu<span class="pl-k">:</span> [
+
+        {
+          name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>archive<span class="pl-pds">'</span></span>,
+          title<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Archive<span class="pl-pds">'</span></span>,
+          icon<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>archive<span class="pl-pds">'</span></span>,
+        },
+
+        {
+          name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>mark<span class="pl-pds">'</span></span>,
+          title<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Mark as read<span class="pl-pds">'</span></span>,
+          icon<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>check<span class="pl-pds">'</span></span>,
+        },
+
+        {
+          name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>void<span class="pl-pds">'</span></span>
+        },
+
+        {
+          name<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>delete<span class="pl-pds">'</span></span>,
+          title<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>Delete<span class="pl-pds">'</span></span>,
+          icon<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>trash<span class="pl-pds">'</span></span>,
+        },
+      ]
+
+    });
+
+  <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#node<span class="pl-pds">'</span></span>)
+    .<span class="pl-en">append</span>(<span class="pl-s"><span class="pl-pds">'</span>&lt;div class="demo-item" id="item-5"&gt;Item 5&lt;/div&gt;<span class="pl-pds">'</span></span>);
+
+  <span class="pl-c">// Disable context menu</span>
+  <span class="pl-c">// context.nuContextMenu('disable');</span>
+
+  <span class="pl-c">// Remove context menu</span>
+  <span class="pl-c">// context.nuContextMenu('destroy');</span>
+
+});</pre></div>
 
 <h1>
 <a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h1>
 
-<p>
-  The MIT License is a free software license originating at the Massachusetts Institute of Technology (MIT). It is a permissive free software license, meaning that it permits reuse within proprietary software provided all copies of the licensed software include a copy of the MIT License terms and the copyright notice.
-</p>
+<p>The MIT License (MIT)</p>
 
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/avxto">avxto</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+<p>Copyright (c) 2015 Alex Suyun</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/avxto/nuContextMenu">nuContextMenu</a> is maintained by <a href="https://github.com/avxto">avxto</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="javascripts/scale.fix.js"></script>
-    <script src="javascripts/nu-context-menu.js"></script>
-    <script>
-      $(function() { 
-        var context = $('#node').nuContextMenu({
-        
-            items: '.demo-item',
-            
-            callback: function (key, element) {
-                alert('Clicked ' + key + ' on ' + $(element).attr('id')); 
-            },
-            
-            menu: {
-            
-                'archive': {
-                    title: 'Archive',
-                    icon: 'archive',
-                },
-                
-                'mark': {
-                    title: 'Mark as read',
-                    icon: 'check',
-                },
 
-                'void': 'separator',
-                
-                'delete': {
-                    title: 'Delete',
-                    icon: 'trash',
-                },                    
-            }
-        });
-        
-    });
-    </script>
+    </section>
+
+  
   </body>
 </html>
