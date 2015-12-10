@@ -44,45 +44,42 @@
     
     _buildContextMenu: function() {
       
-      if (!this.options.menu || typeof this.options.menu !==
-        'object') {
-        return false;
-        }
-        
-        // Create context menu
-        this._menu = $('<div>')
-        .addClass(this.options.contextMenuClass)
-        .append('<ul>');
+      // Create context menu
+      this._menu = $('<div>')
+      .addClass(this.options.contextMenuClass)
+      .append('<ul>');
       
-      var menuObject = this.options.menu,
+      var menuArray = this.options.menu,
       menuList = this._menu.children('ul');
       
       // Create menu items
-      $.each(menuObject, function(key, value) {
+      $.each(menuArray, function(index, element) {
         
         var item;
         
-        if (value === 'separator') {
-          item = $('<hr>');
-        }
-        
-        if (value && typeof value === 'object') {
+        if (element !== null && typeof element !==
+          'object') {
+          return;
+          }
+          
+          if (element.name === 'void') {
+            item = $('<hr>');
+            menuList.append(item);
+            return;
+          }
           
           item = $('<li>')
-          .attr('data-key', key)
-          .text(' ' + value.title);
+          .attr('data-key', element.name)
+          .text(' ' + element.title);
           
-          // Font-awesome support
-          if (value.icon) {
+          if (element.icon) {
             var icon = $('<i>')
-            .addClass('fa fa-' + value.icon.toString());
+            .addClass('fa fa-' + element.icon.toString());
             item.prepend(icon);
           }
           
-        }
-        
-        menuList.append(item);
-        
+          menuList.append(item);
+          
       });
       
       $('body')

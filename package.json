@@ -1,6 +1,6 @@
 {
   "name": "jquery-nucontextmenu",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Modern context menu with font awesome support for web apps (jQuery Plugin).",
   "main": "src/jquery.nu-context-menu.js",
   "scripts": {

@@ -9,46 +9,53 @@ This means that a single menu can be attached to multiple elements.
 # Code Example
 ``` javascript
 $(function() {
-    var context = $('#node').nuContextMenu({
+  var context = $('#node')
+    .nuContextMenu({
 
-        // Omit items if you are attaching to a single container
-        items: '.item',
+      hideAfterClick: true,
 
-        callback: function(key, element) {
-            alert('Clicked ' + key + ' on ' + $(element).attr('id'));
+      items: '.demo-item',
+
+      callback: function(key, element) {
+        alert('Clicked ' + key + ' on ' + $(element)
+          .attr('id'));
+      },
+
+      menu: [
+
+        {
+          name: 'archive',
+          title: 'Archive',
+          icon: 'archive',
         },
 
-        // Define menu items here
-        // key: {...}
-        menu: {
+        {
+          name: 'mark',
+          title: 'Mark as read',
+          icon: 'check',
+        },
 
-            'archive': {
-                title: 'Archive',
-                // Font awesome icons here
-                icon: 'archive',
-            },
+        {
+          name: 'void'
+        },
 
-            'mark': {
-                title: 'Mark as read',
-                icon: 'check',
-            },
+        {
+          name: 'delete',
+          title: 'Delete',
+          icon: 'trash',
+        },
+      ]
 
-            // If the value is 'separator' then an
-            // <hr> node is added
-            'void': 'separator',
-
-            'delete': {
-                title: 'Delete',
-                icon: 'trash',
-            },
-        }
     });
 
-    // Disable context menu
-    // context.nuContextMenu('disable');
+  $('#node')
+    .append('<div class="demo-item" id="item-5">Item 5</div>');
 
-    // remove context menu
-    // context.nuContextMenu('destroy');
+  // Disable context menu
+  // context.nuContextMenu('disable');
+
+  // Remove context menu
+  // context.nuContextMenu('destroy');
 
 });
 ```

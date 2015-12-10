@@ -90,14 +90,14 @@
     </div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="../src/jquery.nu-context-menu.min.js"></script>
+  <script src="../src/jquery.nu-context-menu.js"></script>
   <script>
     $(function() {
       var context = $('#node')
         .nuContextMenu({
-        
+
           hideAfterClick: true,
-          
+
           items: '.demo-item',
 
           callback: function(key, element) {
@@ -105,27 +105,35 @@
               .attr('id'));
           },
 
-          menu: {
+          menu: [
 
-            'archive': {
+            {
+              name: 'archive',
               title: 'Archive',
               icon: 'archive',
             },
 
-            'mark': {
+            {
+              name: 'mark',
               title: 'Mark as read',
               icon: 'check',
             },
-            'void': 'separator',
 
-            'delete': {
+            {
+              name: 'void'
+            },
+
+            {
+              name: 'delete',
               title: 'Delete',
               icon: 'trash',
             },
-          }
+          ]
+
         });
-        
-        $('#node').append('<div class="demo-item" id="item-5">Item 5</div>');
+
+      $('#node')
+        .append('<div class="demo-item" id="item-5">Item 5</div>');
 
     });
   </script>
