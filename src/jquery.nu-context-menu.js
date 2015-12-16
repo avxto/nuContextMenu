@@ -166,7 +166,7 @@
     
     destroy: function() {
       if (this.items) {
-        this.items.off('contextmenu');
+        this.container.off('contextmenu', this.options.items);
       } else {
         this.container.off('contextmenu');
       }
