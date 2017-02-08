@@ -4,7 +4,15 @@ The script is extremely light weight (2.2 kB), and it treats the menu as the pri
 This means that a single menu can be attached to multiple elements.
 
 # Installation 
-``` npm i jquery-nucontextmenu ```
+
+Use npm
+
+    npm i jquery-nucontextmenu
+
+or include the following files from the `src`-foler
+
+    <script type="text/javascript" src="path/to/src/jquery.nu-context-manu.js"></script>
+    <link rel="stylesheet" href="path/to/src/nu-context-menu.css"/>
 
 # Code Example
 ``` javascript
