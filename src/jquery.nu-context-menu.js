@@ -74,7 +74,7 @@
           
           if (element.icon) {
             var icon = $('<i>')
-            .addClass('fa fa-' + element.icon.toString());
+            .addClass('fa fa-fw fa-' + element.icon.toString());
             item.prepend(icon);
           }
           
